@@ -17,10 +17,10 @@ strings and booleans.
 | ``optStr`` | ``Str -> Str`` | optional string
 | ``bothWays`` | ``(x,y : Str) -> Str`` | either ``x ++ y`` or ``y ++ x``
 | ``Bool`` | ``PType`` | values ``True`` and ``False``
-| ``andB`` | ``(_,_ : Bool) -> Bool`` | conjunction 
+| ``andB`` | ``(_,_ : Bool) -> Bool`` | conjunction
 | ``orB`` | ``(_,_ : Bool) -> Bool`` | disjunction
 | ``notB`` | ``Bool -> Bool`` | negation
-| ``if_then_else`` | ``(A:Type)->Bool->A->A->A`` | conditional 
+| ``if_then_else`` | ``(A:Type)->Bool->A->A->A`` | conditional
 | ``init`` | ``Str -> Str`` | drop last character
 | ``last`` | ``Str -> Str`` | return last character
 | ``glue`` | ``Str -> Str -> Str`` | glue tokens together
@@ -33,17 +33,17 @@ These functions are hard-coded in GF. They are available without explicit openin
 || operation | type | explanation ||
 | ``PBool`` | ``PType`` | ``PTrue | PFalse``
 | ``Error`` | ``Type`` | the empty type
-| ``Integer`` | ``Type`` | the type of integers
-| ``Ints`` | ``Integer -> Type`` | integers from 0 to n
+| ``Int`` | ``Type`` | the type of integers
+| ``Ints`` | ``Int -> Type`` | integers from 0 to n
 | ``error`` | ``Str -> Error`` | forms error message
 | ``length`` | ``Str -> Int`` | length of string
-| ``drop`` | ``Integer -> Str -> Str`` | drop prefix of length
-| ``take`` | ``Integer -> Str -> Str`` | take prefix of length
-| ``tk`` | ``Integer -> Str -> Str`` | drop suffix of length
-| ``dp`` | ``Integer -> Str -> Str`` | take suffix of length
-| ``eqInt`` | ``Integer -> Integer -> PBool`` | test if equal integers
-| ``lessInt`` | ``Integer -> Integer -> PBool`` | test order of integers
-| ``plus`` | ``Integer -> Integer -> Integer`` | add integers
+| ``drop`` | ``Int -> Str -> Str`` | drop prefix of length
+| ``take`` | ``Int -> Str -> Str`` | take prefix of length
+| ``tk`` | ``Int -> Str -> Str`` | drop suffix of length
+| ``dp`` | ``Int -> Str -> Str`` | take suffix of length
+| ``eqInt`` | ``Int -> Int -> PBool`` | test if equal integers
+| ``lessInt`` | ``Int -> Int -> PBool`` | test order of integers
+| ``plus`` | ``Int -> Int -> Int`` | add integers
 | ``eqStr`` | ``Str -> Str -> PBool`` | test if equal strings
 | ``occur`` | ``Str -> Str -> PBool`` | test if occurs as substring
 | ``occurs`` | ``Str -> Str -> PBool`` | test if any char occurs
@@ -89,7 +89,7 @@ languages.
 
 ==The Combinators module==
 
-This module gives shortcuts for defining predicates (``pred``) and function 
+This module gives shortcuts for defining predicates (``pred``) and function
 expressions (``app``). It works for all resource languages.
 
 || Function | Type | Example ||
@@ -100,7 +100,7 @@ expressions (``app``). It works for all resource languages.
 | ``pred`` | ``A2 -> NP -> NP -> Cl`` |    //x is divisible by y//
 | ``pred`` | ``A  -> NP -> NP -> Cl`` |    //x and y are equal//
 | ``pred`` | ``N  -> NP -> Cl`` |          //x is a maximum//
-| ``pred`` | ``N  -> NP -> NP -> Cl`` |    //x and y are inverses// 
+| ``pred`` | ``N  -> NP -> NP -> Cl`` |    //x and y are inverses//
 | ``pred`` | ``Adv -> NP -> Cl`` |         //x is in scope//
 | ``pred`` | ``Prep -> NP -> NP -> Cl`` |  //x is outside y//
 | ``app`` | ``N  -> NP`` |              //the bottom//
@@ -111,5 +111,3 @@ expressions (``app``). It works for all resource languages.
 | ``app`` | ``N2 -> NP -> CN`` |        //divisor of x//
 | ``app`` | ``N3 -> NP -> NP -> CN`` |  //path from x to y//
 | ``app`` | ``N2 -> NP -> NP -> CN`` |  //path between x and y//
-
-

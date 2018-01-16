@@ -57,7 +57,7 @@ of the Haskell Platform	 was successful you should see a message like:
 The Glorious Glasgow Haskell Compilation System, version 8.0.2
 ```
 
-Other required tools included in the Haskell Platform are 
+Other required tools included in the Haskell Platform are
 [Cabal http://www.haskell.org/cabal/],
 [Alex http://www.haskell.org/alex/]
 and
@@ -130,7 +130,7 @@ directory, or any of its subdirectories.
 Since every copy is a repository, you can have local version control
 of your changes.
 
-If you have added files, you first need to tell your local repository to 
+If you have added files, you first need to tell your local repository to
 keep them under revision control:
 
 ```
@@ -156,7 +156,7 @@ files. You still need to use ``git add`` to add new files.
 %==== Submitting patches ====
 %
 %If you are using read-only access, send your patches by email to
-%someone with write-access. First record your changes in your local 
+%someone with write-access. First record your changes in your local
 %repository, as described above. You can send any number of recorded
 %patches as one patch bundle. You create the patch bundle with:
 %
@@ -406,7 +406,7 @@ bash setup.sh build
 bash setup.sh install
 ```
 This will install
-the C header files and libraries need to write C programs that use PGF grammars.
+the C header files and libraries needed to write C programs that use PGF grammars.
 Some example C programs are included in the ``utils`` subdirectory, e.g.
 ``pgf-translate.c``.
 
@@ -414,9 +414,9 @@ When the C run-time system is installed, you can install GF with C run-time
 support by doing
 
 ```
-cabal install -fserver -fc-runtime
+cabal install -fserver -fc-runtime --extra-include-dirs=$CPATH --extra-lib-dirs=$CPATH
 ```
-from the top directory. This give you three new things:
+from the root directory (where the gf.cabal file is). The $CPATH variable a the list of the paths where the C runtime libs were installed. This give you three new things:
 
 - ``PGF2``: a module to import in Haskell programs, providing a binding to
    the C run-time system.
@@ -519,7 +519,7 @@ $ cabal test
 ```
 The testsuite architecture for GF is very simple but still very flexible.
 GF by itself is an interpreter and could execute commands in batch mode.
-This is everything that we need to organize a testsuite. The root of the 
+This is everything that we need to organize a testsuite. The root of the
 testsuite is the testsuite/ directory. It contains subdirectories which
 themself contain GF batch files (with extension .gfs). The above command
 searches the subdirectories of the testsuite/ directory for files with extension
