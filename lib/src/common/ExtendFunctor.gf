@@ -1,4 +1,4 @@
-incomplete concrete ExtendFunctor of Extend = Cat ** open Grammar in {
+incomplete concrete ExtendFunctor of Extend = Cat ** open Grammar, Syntax in {
 
 lincat
   RNP = Grammar.NP ;
@@ -29,10 +29,10 @@ lin
   MkVPI vp = variants {} ;     -- Temp -> Pol -> VP -> VPI ; -- to sleep / hasn't slept
   ConjVPI = variants {} ;     -- Conj -> [VPI] -> VPI ; -- has walked and won't sleep
   ComplVPIVV = variants {} ;     -- VV -> VPI -> VP ; -- want to sleep and to walk
-  MkVPS2 = variants {} ;     --     : Temp -> Pol -> VPSlash -> VPS2 ;  -- has loved       
+  MkVPS2 = variants {} ;     --     : Temp -> Pol -> VPSlash -> VPS2 ;  -- has loved
   ConjVPS2 = variants {} ;     --   : Conj -> [VPS2] -> VPS2 ;          -- has loved and now hates
   ComplVPS2 = variants {} ;     --  : VPS2 -> NP -> VPS ;               -- has loved and now hates that person
-  MkVPI2 = variants {} ;     --     : Ant  -> Pol -> VPSlash -> VPI2 ;  -- to have loved       
+  MkVPI2 = variants {} ;     --     : Ant  -> Pol -> VPSlash -> VPI2 ;  -- to have loved
   ConjVPI2 = variants {} ;     --   : Conj -> [VPI2] -> VPI2 ;          -- to love and have hated
   ComplVPI2 = variants {} ;     --  : VPI2 -> NP -> VPI ;               -- to love and hate that person
   ProDrop pro = pro ;     -- am tired ; DEFAULT I am tired (no pro drop)
@@ -93,9 +93,10 @@ lin
   CompQS = variants {} ;     -- QS -> Comp ; -- (the question is) who sleeps
   CompVP = variants {} ;     -- Ant -> Pol -> VP -> Comp ; -- (she is) to go
 
+  ComplSlashPartLast vps np = mkVP vps np ;
 
   DetNPFem = DetNP ;
-  
+
   iFem_Pron = i_Pron ; -- DEFAULT I (masc)
   youFem_Pron = youSg_Pron ; -- DEFAULT you (masc)
   weFem_Pron = we_Pron ;  -- DEFAULT we (masc)
