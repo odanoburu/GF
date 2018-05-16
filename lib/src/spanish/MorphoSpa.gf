@@ -144,7 +144,7 @@ oper
        } ;
 
     a = Ag g n p ;
-    hasClit = True ; isPol = False
+    hasClit = True
     } ;
 
 

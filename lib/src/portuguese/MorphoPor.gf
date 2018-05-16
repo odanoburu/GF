@@ -207,7 +207,7 @@ oper
        <Pl,Fem>  => suas
        } ;
      a = Ag g n p ;
-     hasClit = True ; isPol = False
+     hasClit = True
     } ** pronLin ele o lhe Ele ;
 
   pronLin : (_,_,_,_ : Str) -> {s : Case =>  {c1,c2,comp,ton : Str}} ;

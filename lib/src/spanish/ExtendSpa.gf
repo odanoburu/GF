@@ -27,12 +27,12 @@ concrete ExtendSpa of Extend =
       "su" "su" "sus" "sus"
       Fem Pl P3 ;
 
-    weFem_Pron = mkPronoun 
+    weFem_Pron = mkPronoun
       "nosotras" "nos" "nos" "nosotras"
       "nuestro" "nuestra" "nuestros" "nuestras"
       Fem Pl P1 ;
 
-    youFem_Pron = mkPronoun 
+    youFem_Pron = mkPronoun
       "tú" "te" "te" "ti"
       "tu" "tu" "tus" "tus"
       Fem Sg P2 ;
@@ -56,13 +56,12 @@ concrete ExtendSpa of Extend =
 
     ProDrop p = {
       s = table {
-        Nom => let pn = p.s ! Nom in {c1 = pn.c1 ; c2 = pn.c2 ; comp = [] ; ton = pn.ton} ; 
+        Nom => let pn = p.s ! Nom in {c1 = pn.c1 ; c2 = pn.c2 ; comp = [] ; ton = pn.ton} ;
         c => p.s ! c
         } ;
       a = p.a ;
       poss = p.poss ;
       hasClit = p.hasClit ;
-      isPol = p.isPol ;
       isNeg = False
       } ;
 

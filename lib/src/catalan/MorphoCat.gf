@@ -283,7 +283,7 @@ oper unaccent : Str -> Str = \vocal ->
       <Pl,Fem>  => lesSeves
       } ;
     a = Ag g n p ;
-    hasClit = True ; isPol = False
+    hasClit = True
     } ;
 
   elisPoss : Str -> Str = \s ->

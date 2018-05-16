@@ -519,7 +519,6 @@ oper
   makeNP x g n = {s = (pn2np (mk2PN x g)).s;
                   a = agrP3 g n ;
                   hasClit = False ;
-                  isPol = False ;
                   isNeg = False} ** {lock_NP = <>} ;
 
   reflVerboV : Verbum -> V = \ve -> reflV (verboV ve) ;

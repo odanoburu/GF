@@ -6,8 +6,10 @@
 ---- patterns needed for $Lex$.
 --
 
-instance ResFre of ResRomance = DiffFre ** open CommonRomance, Prelude in {
-
-flags optimize=noexpand ;
-
+instance ResFre of ResRomance =
+  DiffFre **
+  open CommonRomance, Prelude in {
+  flags optimize=noexpand ;
+  oper
+    NP = NounPhrase ** {isPol : Bool} ;
 } ;
